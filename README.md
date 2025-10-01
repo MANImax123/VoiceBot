@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VoiceBot - AI Voice Assistant
 
-## Getting Started
+A modern Next.js web application with voice recognition and AI-powered responses using Google's Gemini AI.
 
-First, run the development server:
+## Features
+
+- 🎤 **Voice Recognition**: Uses Web Speech API for real-time speech-to-text conversion
+- 🤖 **AI Responses**: Powered by Google Gemini AI for intelligent conversations
+- 🌙 **Dark Theme**: Professional black theme with blue accents
+- 💬 **Chat Interface**: Real-time conversation display with timestamps
+- 📱 **Responsive Design**: Works on desktop and mobile devices
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure Gemini API
+
+1. Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Copy `.env.local` and add your API key:
+
+```env
+GEMINI_API_KEY=your_actual_api_key_here
+```
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Click the microphone button to start listening
+2. Speak your question or message
+3. The app will convert your speech to text in real-time
+4. AI will process your message and respond
+5. View the conversation history in the chat interface
 
-## Learn More
+## Browser Support
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Chrome (Recommended)
+- ✅ Edge
+- ✅ Safari (macOS/iOS)
+- ❌ Firefox (Limited Web Speech API support)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 15 with App Router
+- **Styling**: TailwindCSS
+- **AI**: Google Gemini Pro
+- **Speech**: Web Speech API
+- **Language**: TypeScript
 
-## Deploy on Vercel
+## File Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── api/gemini/       # Gemini AI API route
+│   ├── globals.css       # Global styles
+│   └── page.tsx          # Main page
+├── components/
+│   ├── VoiceBotCard.tsx  # Main chat interface
+│   └── MicrophoneButton.tsx # Voice input button
+└── types/
+    └── speech.d.ts       # Web Speech API types
+```
